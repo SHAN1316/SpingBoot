@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>增加用户</title>
+</head>
+<!-- <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script> -->
+
+<!-- <script type="text/javascript">
+  function addUser(){
+    	 debugger;
+    	 var userName=$("#userName").val;
+    	 var email=$("#email").val
+    	 var id=$("#id").val
+    	 $.ajax({
+    		 type:"post",
+    	      url:"/addUser"
+    	      data:{
+    	    	  id:id,
+    	    	  userName:userName,
+    	    	  email:email
+    	    	 
+    	      },
+    	      dataType:"json",
+    	      sucess function (data){
+    	    	//debugger;
+  				window.location.href ='/Select/select1'; 
+    	      }
+    	 })
+     }
+
+</script> -->
+<body>
+	<form action="/User/AddUser" method="post">
+	<table>
+		<!-- <tr>
+			<td>序号:</td>
+			<td><input type="text" id="id" name="id"></td>
+		</tr> -->
+		<tr>
+			<td>用户名:</td>
+			<td><input type="text" id="userName" name="userName"></td>
+		</tr>
+		<tr>
+			<td>邮箱:</td>
+			<td><input type="text" id="email" name="email"></td>
+		</tr>
+		<tr>
+			<td><input id="addUser1" type="submit" value="提交"/></td>
+			<!-- onclick="addUser()" -->
+			<td><input type="button" value="取消"
+				onclick="javascript:history.go(-1);"></td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

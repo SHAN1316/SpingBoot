@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8"/>
+
+    <title>Hello World!</title>
+</head>
+<body>
+    <h1>Hello.thymeleaf</h1>
+    <!-- <p th:text="${hello}"></p> -->
+	<table>
+		<thead>
+		<tr>
+		<td><a th:href="@{/User/toAddUser}">增加</a></td>
+		</tr>
+			<tr>
+				<th>序号</th>
+				<th>用户名</th>
+				<th>邮箱</th>
+				<th>修改</th>
+				<th>删除</th>
+			</tr>
+			<tr th:each="prod:${list}">
+			    <td th:text="${prod.getId()}"></td>
+				<td th:text="${prod.getUserName()}"></td>
+				<td th:text="${prod.getEmail()}"></td>	
+				<td><a th:href="@{/User/toUpdUser(id=${prod.getId()})}">修改</a></td>
+				<td><a th:href="@{/User/DelUser(id=${prod.getId()})}">删除</a></td>
+				<!-- <td> <a th:href="@{/SelUser/toDelete/{id}(id=${prod.getId()})}>删除</a></td> -->
+			</tr>
+		</thead>
+	</table>
+</body>
+</html>
